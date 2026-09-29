@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#140b24">
+<title>Luisa Viviana · 24 años ✨</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<div id="loader" class="loader">
+  <div class="loader-card">
+    <div class="loader-orbit">24</div>
+    <h1>Una sorpresa para Luisa</h1>
+    <p>Preparando tus recuerdos…</p>
+    <button id="enterBtn" class="surprise-btn">✨ Abrir sorpresa</button>
+  </div>
+</div>
+
+<main id="site" class="hidden">
+  <nav class="nav">
+    <div class="brand">L<span>♥</span>UISA · 24</div>
+    <div class="nav-actions">
+      <button id="musicBtn" class="icon-btn" aria-label="Música">♫</button>
+      <button id="langBtn" class="lang-btn">ES</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">02 · 10 · 2026</span>
+      <h1>¡Feliz cumpleaños,<br><strong>Luisa Viviana!</strong></h1>
+      <p class="lead" data-i18n="hero">Hoy celebramos 24 años de una historia llena de momentos, sonrisas y recuerdos inolvidables.</p>
+      <div class="age-wrap"><span>2</span><span>4</span><small>años</small></div>
+      <button class="primary" id="scrollGallery">Ver la sorpresa ↓</button>
+    </div>
+    <div class="hero-photo" id="heroPhoto"></div>
+  </section>
+
+  <section class="languages">
+    <div class="quote" data-lang="es"><span>ES</span> “Que tus 24 estén llenos de magia, amor y sueños cumplidos.”</div>
+    <div class="quote" data-lang="en"><span>EN</span> “May 24 be filled with magic, love and dreams come true.”</div>
+    <div class="quote" data-lang="fr"><span>FR</span> “Que tes 24 ans soient remplis de magie, d’amour et de rêves réalisés.”</div>
+    <div class="quote" data-lang="de"><span>DE</span> “Mögen deine 24 voller Magie, Liebe und erfüllter Träume sein.”</div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="section-head">
+      <span class="eyebrow">MEMORIES</span>
+      <h2>Momentos que merecen quedarse para siempre.</h2>
+      <p>Desliza, toca una foto o deja que la historia avance sola.</p>
+    </div>
+    <div class="cinema">
+      <button class="arrow prev" id="prev">‹</button>
+      <div class="slides" id="slides"></div>
+      <button class="arrow next" id="next">›</button>
+      <div class="progress"><span id="progressBar"></span></div>
+      <div class="counter"><b id="current">01</b> / <span id="total">14</span></div>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+  </section>
+
+  <section class="letter-section">
+    <div class="letter-card">
+      <div class="seal">♥</div>
+      <span class="eyebrow">A LITTLE LETTER</span>
+      <h2>Para ti, Luisa</h2>
+      <p>Que esta nueva vuelta al sol te encuentre rodeada de personas que te quieran, de aventuras que te hagan sonreír y de sueños que valga la pena perseguir.</p>
+      <p>Hoy no solo celebramos tu cumpleaños. Celebramos todo lo bonito que has dejado en la vida de quienes han tenido la suerte de compartir contigo.</p>
+      <p class="signature">Con cariño, para ti. ✨</p>
+      <button id="wishBtn" class="primary">Pedir un deseo ✨</button>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <div class="section-head">
+      <span class="eyebrow">MOVING MEMORIES</span>
+      <h2>Recuerdos en movimiento</h2>
+    </div>
+    <div class="videos" id="videos"></div>
+  </section>
+
+  <section class="finale">
+    <div class="firework-title">24</div>
+    <span class="eyebrow">HAPPY BIRTHDAY</span>
+    <h2>Luisa Viviana Viviana<br><strong>Granada Pulido</strong></h2>
+    <p data-i18n="final">Que nunca te falten motivos para sonreír. ✨</p>
+    <button id="againBtn" class="ghost">↻ Volver a vivir la sorpresa</button>
+  </section>
+
+  <footer>Hecho con ♥ para celebrar tus 24 años · 2026</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

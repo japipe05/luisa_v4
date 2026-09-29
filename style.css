@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #090611;
+    --panel: #140d20;
+    --pink: #f3a9d4;
+    --gold: #f4d59a;
+    --white: #fff8ff;
+    --muted: #c7baca
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: Montserrat, Arial, sans-serif;
+    overflow-x: hidden
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: .55;
+    z-index: 0
+}
+
+.hidden {
+    display: none
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, #3b1d49, #090611 65%);
+    display: grid;
+    place-items: center;
+    z-index: 20
+}
+
+.loader-card {
+    text-align: center;
+    padding: 32px
+}
+
+.loader-card h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.3rem, 7vw, 5rem);
+    margin: 15px 0 5px
+}
+
+.loader-card p {
+    color: var(--muted)
+}
+
+.loader-orbit {
+    width: 135px;
+    height: 135px;
+    margin: auto;
+    border: 1px solid #ffffff55;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font: 700 4.5rem "Cormorant Garamond";
+    color: var(--gold);
+    box-shadow: 0 0 70px #e99bd955;
+    animation: pulse 2.2s infinite
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background: linear-gradient(#090611dd, transparent)
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: .18em;
+    font-size: .75rem
+}
+
+.brand span {
+    color: var(--pink)
+}
+
+.nav-actions {
+    display: flex;
+    gap: 8px
+}
+
+.icon-btn,
+.lang-btn,
+.ghost,
+.primary {
+    border: 1px solid #ffffff33;
+    background: #ffffff0d;
+    color: var(--white);
+    border-radius: 999px;
+    padding: 10px 15px;
+    cursor: pointer;
+    backdrop-filter: blur(12px)
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 110px 8vw 70px;
+    overflow: hidden
+}
+
+.hero-glow {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: #d75baf22;
+    filter: blur(70px);
+    right: -15vw;
+    top: 10vh
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 700px
+}
+
+.eyebrow {
+    font-size: .68rem;
+    letter-spacing: .35em;
+    color: var(--gold);
+    font-weight: 700
+}
+
+.hero h1 {
+    font: 500 clamp(3.3rem, 7vw, 7.5rem)/.82 "Cormorant Garamond", serif;
+    margin: 25px 0
+}
+
+.hero h1 strong,
+.finale strong {
+    font-weight: 700;
+    color: var(--pink)
+}
+
+.lead {
+    max-width: 600px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1rem
+}
+
+.age-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 24px 0
+}
+
+.age-wrap span {
+    font: 700 clamp(4rem, 9vw, 8rem)/.75 "Cormorant Garamond";
+    color: var(--gold)
+}
+
+.age-wrap small {
+    margin-left: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .2em
+}
+
+.primary {
+    background: var(--white);
+    color: #160b1d;
+    border: 0;
+    font-weight: 700;
+    padding: 14px 22px
+}
+
+.hero-photo {
+    height: 72vh;
+    min-height: 450px;
+    border-radius: 220px 220px 18px 18px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 30px 100px #000, 0 0 70px #e08ec833;
+    animation: float 6s ease-in-out infinite
+}
+
+.languages {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #ffffff14;
+    border-bottom: 1px solid #ffffff14
+}
+
+.quote {
+    padding: 30px 25px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: .8rem
+}
+
+.quote span {
+    display: block;
+    color: var(--pink);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    margin-bottom: 8px
+}
+
+.gallery-section,
+.letter-section,
+.video-section {
+    position: relative;
+    z-index: 2;
+    padding: 120px 7vw
+}
+
+.section-head {
+    max-width: 750px;
+    margin-bottom: 35px
+}
+
+.section-head h2,
+.letter-card h2,
+.finale h2 {
+    font: 600 clamp(2.8rem, 6vw, 6rem)/.9 "Cormorant Garamond", serif;
+    margin: 15px 0
+}
+
+.section-head p {
+    color: var(--muted)
+}
+
+.cinema {
+    position: relative
+}
+
+.slides {
+    height: min(72vh, 760px);
+    min-height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background: #120b18
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 1s ease, transform 8s ease
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.slide:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #09061199, transparent 55%)
+}
+
+.arrow {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ffffff55;
+    background: #0007;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer
+}
+
+.prev {
+    left: 18px
+}
+
+.next {
+    right: 18px
+}
+
+.progress {
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: #ffffff33
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--gold);
+    transition: width .2s
+}
+
+.counter {
+    position: absolute;
+    right: 5%;
+    bottom: 35px;
+    z-index: 3;
+    font-size: .75rem;
+    letter-spacing: .15em
+}
+
+.thumbs {
+    display: flex;
+    gap: 8px;
+    overflow: auto;
+    padding-top: 14px
+}
+
+.thumbs button {
+    flex: 0 0 75px;
+    height: 60px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    background: none;
+    opacity: .5;
+    cursor: pointer
+}
+
+.thumbs button.active {
+    border-color: var(--pink);
+    opacity: 1
+}
+
+.thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.letter-section {
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 50% 50%, #33162e66, transparent 50%)
+}
+
+.letter-card {
+    max-width: 850px;
+    text-align: center;
+    padding: 70px 8vw;
+    border: 1px solid #ffffff1c;
+    background: #ffffff08;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    box-shadow: 0 30px 100px #0005
+}
+
+.letter-card p {
+    color: #d9ccdc;
+    line-height: 1.9
+}
+
+.seal {
+    margin: auto;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #f3a9d422;
+    color: var(--pink);
+    font-size: 1.5rem
+}
+
+.signature {
+    font: italic 1.7rem "Cormorant Garamond";
+    color: var(--gold) !important
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px
+}
+
+.videos video {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 18px;
+    background: #120b18
+}
+
+.finale {
+    text-align: center;
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, #451d4588, transparent 55%)
+}
+
+.firework-title {
+    font: 700 clamp(8rem, 25vw, 22rem)/.7 "Cormorant Garamond";
+    color: transparent;
+    -webkit-text-stroke: 1px #f4d59a66;
+    text-shadow: 0 0 70px #f3a9d455
+}
+
+.finale h2 {
+    font-size: clamp(3rem, 7vw, 7rem)
+}
+
+.finale p {
+    color: var(--muted)
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #87798c;
+    font-size: .7rem;
+    position: relative;
+    z-index: 2
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-12px)
+    }
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 100px #e99bd977
+    }
+}
+
+@media(max-width:800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 120px
+    }
+
+    .hero-photo {
+        height: 55vh;
+        min-height: 350px;
+        grid-row: 1;
+        margin-bottom: 30px;
+        border-radius: 170px 170px 15px 15px
+    }
+
+    .hero h1 {
+        font-size: 4rem
+    }
+
+    .languages {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .quote {
+        padding: 20px 15px
+    }
+
+    .gallery-section,
+    .letter-section,
+    .video-section {
+        padding: 80px 5vw
+    }
+
+    .slides {
+        height: 58vh;
+        min-height: 350px
+    }
+
+    .videos {
+        grid-template-columns: 1fr
+    }
+
+    .video-section .section-head {
+        margin-bottom: 20px
+    }
+
+    .letter-card {
+        padding: 50px 7vw
+    }
+}
+
+@media(max-width:480px) {
+    .languages {
+        grid-template-columns: 1fr
+    }
+
+    .quote {
+        border-bottom: 1px solid #ffffff0d
+    }
+
+    .hero {
+        padding-left: 6vw;
+        padding-right: 6vw
+    }
+
+    .hero h1 {
+        font-size: 3.4rem
+    }
+
+    .arrow {
+        width: 42px;
+        height: 42px
+    }
+
+    .thumbs button {
+        flex-basis: 62px;
+        height: 50px
+    }
+}
+
+.surprise-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 17px 32px;
+    min-width: 250px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(243, 169, 212, 0.18));
+
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(243, 169, 212, 0.25);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Brillo que pasa por encima */
+.surprise-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+}
+
+/* Hover */
+.surprise-btn:hover {
+    transform: translateY(-5px) scale(1.04);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45), 0 0 45px rgba(243, 169, 212, 0.55);
+}
+
+.surprise-btn:hover::before {
+    left: 140%;
+}
+
+/* Al hacer clic */
+.surprise-btn:active {
+    transform: scale(0.96);
+}
+
+/* Estrellas */
+.sparkle {
+    color: #f4d59a;
+    font-size: 18px;
+    animation: sparkleRotate 2s infinite ease-in-out;
+}
+
+/* Corazón */
+.heart {
+    color: #f3a9d4;
+    font-size: 18px;
+    animation: heartBeat 1.5s infinite;
+}
+
+/* Animación de estrella */
+@keyframes sparkleRotate {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(20deg) scale(1.3);
+    }
+}
+
+/* Animación del corazón */
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+}
+
+/* Adaptación para celular */
+@media (max-width: 480px) {
+    .surprise-btn {
+        min-width: 220px;
+        padding: 15px 22px;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .sparkle,
+    .heart {
+        font-size: 16px;
+    }
+}
+
+/*boton sorpresa */
